@@ -1,0 +1,19 @@
+/*
+Theme Name: ZimmermannTheme
+Theme URI: https://blumewebstudio.com.br
+Author: Blume Web Studio
+Author URI: https://blumewebstudio.com.br
+Description: Tema criado para a Zimmermann.
+Version: 1.0
+*/
+
+@import "themes/colors";
+
+@import "base/typography";
+@import "base/geral";
+
+@import "components/header";
+@import "components/footer";
+@import "components/buttons";
+
+@import "pages/page-home";
