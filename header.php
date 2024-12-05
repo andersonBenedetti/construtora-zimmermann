@@ -25,28 +25,40 @@
 <body>
     <div id="app">
 
-        <header id="header">
-            <div class="container">
-                <a href="/" class="logo">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-header.webp" alt="Logo SupelPack">
-                </a>
-                <div class="links">
-                    <div class="menu-header" :class="{active: activeMenu}">
-                        <button class="btn-menu" @click="activeMenu = !activeMenu">
-                            <span></span>
-                        </button>
-                        <?php
-                        wp_nav_menu([
-                            'menu' => 'menuHeader',
-                            'container' => 'nav',
-                            'container_class' => 'menu-list',
-                        ]);
-                        ?>
+        <header id="header" v-bind:class="{ 'header-static': !isScrolled, 'header-scrolled': isScrolled }">
+            <div class="header-static" v-bind:class="{ hidden: isScrolled }">
+                <div class="container">
+                    <div class="content">
+                        <a href="/" class="logo">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-header.webp"
+                                alt="Logo Construtora Zimmermann">
+                        </a>
+                        <div class="menu-header" :class="{ active: activeMenu }">
+                            <button class="btn-menu" @click="activeMenu = !activeMenu">
+                                <span></span>
+                            </button>
+                            <ul class="menu-list">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="#">Empreendimentos</a></li>
+                                <li><a href="#">Sobre nós</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <a href="#" class="btn">
-                        <span>Meu orçamento</span>
-                        <?php include get_stylesheet_directory() . '/img/icons/cart-icon.svg'; ?>
-                    </a>
+                </div>
+            </div>
+
+            <div class="header-scrolled" v-bind:class="{ hidden: !isScrolled }">
+                <div class="container">
+                    <div class="content">
+                        <a href="/" class="logo">
+                            <?php include get_stylesheet_directory() . '/img/logo-header-active.svg'; ?>
+                        </a>
+                        <ul class="menu-list">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="#">Empreendimentos</a></li>
+                            <li><a href="#">Sobre nós</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>
