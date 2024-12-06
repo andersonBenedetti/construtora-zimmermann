@@ -25,8 +25,9 @@ html {
   font-weight: 400;
   line-height: 1;
   color: #000000;
-  background-color: #4f4e50;
+  background-color: #414042;
   scroll-behavior: smooth;
+  color: #ffffff;
 }
 
 main {
@@ -46,6 +47,22 @@ ul {
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.title {
+  position: relative;
+  padding-left: 85px;
+}
+.title::before {
+  display: block;
+  content: "";
+  width: 50px;
+  height: 1px;
+  background-color: #ffffff;
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateX(-50%);
 }
 
 .slick-arrow {
@@ -151,7 +168,7 @@ ul {
 #header .header-static .content .menu-header .menu-list a {
   font-weight: 300;
   font-size: 1.125em;
-  line-height: 1.85em;
+  line-height: 29.6px;
   text-transform: uppercase;
   color: #ffffff;
   transition: color 0.3s ease;
@@ -177,7 +194,7 @@ ul {
 }
 #header .header-scrolled {
   position: fixed;
-  background-color: #4f4e50;
+  background-color: #414042;
   padding: 10px 0;
 }
 #header .header-scrolled .content {
@@ -195,7 +212,7 @@ ul {
 #header .header-scrolled .content .menu-list a {
   font-weight: 300;
   font-size: 1em;
-  line-height: 1.875em;
+  line-height: 30px;
   color: #ffffff;
   transition: color 0.3s ease;
 }
@@ -222,30 +239,35 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   width: max-content;
-  height: 38px;
-  padding: 0 15px;
-  font-size: 0.875em;
-  font-weight: 500;
+  padding: 5px 0;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 16px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
   color: #ffffff;
-  border: 2px solid #000000;
   box-sizing: border-box;
-  border-radius: 20px;
-  background-color: #000000;
-  transition: background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
+  transition: color 0.3s ease;
+}
+.btn > svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
 }
 .btn > svg path {
-  stroke: #ffffff;
-  transition: stroke 0.3s ease;
+  transition: fill 0.3s ease;
 }
 .btn:hover {
-  background-color: transparent;
-  color: #000000;
+  color: #ffa1a4;
 }
-.btn:hover > svg path {
-  stroke: #000000;
+.btn:hover svg {
+  transform: scale(1.3);
+}
+.btn:hover svg path {
+  fill: #ffa1a4;
 }
 
 #pg-home .carousel-home {
@@ -267,6 +289,109 @@ ul {
 }
 #pg-home .carousel-home .slick-arrow.slick-next {
   right: 10%;
+}
+#pg-home .infos {
+  position: relative;
+  padding: 100px 20px;
+}
+#pg-home .infos .link {
+  display: block;
+  position: absolute;
+  top: -80px;
+  right: 10%;
+  z-index: 99;
+  font-size: 0.875em;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 10px;
+  margin-right: -10px;
+}
+#pg-home .infos .link::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#pg-home .infos .top {
+  display: flex;
+  justify-content: space-between;
+  gap: 150px;
+  margin-bottom: 50px;
+}
+#pg-home .infos .top .img {
+  position: relative;
+}
+#pg-home .infos .top .img h2 {
+  position: absolute;
+  bottom: 80px;
+  left: -85px;
+  font-weight: 400;
+  font-size: 1.75em;
+  line-height: 45.8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+}
+#pg-home .infos .top .img img {
+  min-width: 410px;
+  height: auto;
+  padding-left: 110px;
+}
+#pg-home .infos .top .content .title {
+  font-weight: 400;
+  font-size: 1.375em;
+  line-height: 40.2px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+#pg-home .infos .top .content .counter {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 50px;
+}
+#pg-home .infos .top .content .counter span {
+  font-weight: 400;
+  font-size: 2.25em;
+  line-height: 60px;
+  letter-spacing: 0.3em;
+  color: #ffa1a4;
+}
+#pg-home .infos .top .content .counter p {
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 30px;
+}
+#pg-home .infos .bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 150px;
+}
+#pg-home .infos .bottom .content {
+  min-width: 410px;
+  max-width: 410px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#pg-home .infos .bottom .content p {
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 30px;
+}
+#pg-home .infos .bottom .video {
+  display: block;
+  max-width: 700px;
+  width: 100%;
+}
+#pg-home .infos .bottom .video img {
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {
