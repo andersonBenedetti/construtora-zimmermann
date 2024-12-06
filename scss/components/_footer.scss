@@ -1,0 +1,40 @@
+#footer {
+  background-color: $gray-secondary;
+
+  .top {
+    padding: 50px 0;
+
+    .logo {
+      display: block;
+      max-width: 190px;
+      margin: 0 auto;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      border-top: 2px solid $border;
+      padding-top: 20px;
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        a {
+          display: block;
+          @include label;
+          text-transform: uppercase;
+          color: $white;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,36 @@
-<footer id="footer" class="container">
-
+<footer id="footer">
+    <div class="container">
+        <div class="top">
+            <a href="/" class="logo">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-header.webp"
+                    alt="Logo Construtora Zimmermann">
+            </a>
+            <div class="content">
+                <div class="menu">
+                    <a href="#" aria-label="Local Matriz">Matriz</a>
+                    <a href="#" aria-label="Filial São José">Filial São José</a>
+                </div>
+                <div class="menu">
+                    <a href="mailto:contato@construtorazimmermann.com.br"
+                        aria-label="Enviar e-mail para contato@construtorazimmermann.com.br">contato@construtorazimmermann.com.br</a>
+                    <a href="https://wa.me/554732681000" target="_blank" rel="noopener noreferrer"
+                        aria-label="Abrir WhatsApp para (47) 3268 1000">(47) 3268 1000</a>
+                    <a href="https://wa.me/554832678543" target="_blank" rel="noopener noreferrer"
+                        aria-label="Abrir WhatsApp para (48) 3267-8543">(48) 3267-8543</a>
+                </div>
+                <div class="menu">
+                    <a href="https://g.co/kgs/XWHPduu" target="_blank" rel="noopener noreferrer"
+                        aria-label="Abrir localização da Matriz no Google Maps">
+                        R. 232, n 245 - Meia Praia, Itapema/SC 88220-000
+                    </a>
+                    <a href="https://g.co/kgs/Qr4Kh29" target="_blank" rel="noopener noreferrer"
+                        aria-label="Abrir localização da Filial no Google Maps">
+                        R. Ademar da Silva, n° 512 - Campinas, São José/SC 88101-001
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <script>
