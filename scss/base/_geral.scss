@@ -39,3 +39,37 @@ ul {
   margin: 0 auto;
   padding: 0 20px;
 }
+
+.slick-arrow {
+  position: absolute;
+  z-index: 1;
+  border: 0;
+  border-radius: 50%;
+  font-size: 0;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+  width: 46px;
+  height: 46px;
+  transition: background 0.3s ease;
+
+  &.slick-next {
+    &::before {
+      transform: rotate(180deg);
+    }
+  }
+
+  &::before {
+    background-image: url("./img/icons/arrow-slick.svg");
+    background-size: 46px 46px;
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    content: "";
+  }
+
+  &:hover {
+    background-color: $black;
+  }
+}

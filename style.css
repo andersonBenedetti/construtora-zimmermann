@@ -48,6 +48,35 @@ ul {
   padding: 0 20px;
 }
 
+.slick-arrow {
+  position: absolute;
+  z-index: 1;
+  border: 0;
+  border-radius: 50%;
+  font-size: 0;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+  width: 46px;
+  height: 46px;
+  transition: background 0.3s ease;
+}
+.slick-arrow.slick-next::before {
+  transform: rotate(180deg);
+}
+.slick-arrow::before {
+  background-image: url("./img/icons/arrow-slick.svg");
+  background-size: 46px 46px;
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  content: "";
+}
+.slick-arrow:hover {
+  background-color: #000000;
+}
+
 #header {
   position: relative;
 }
@@ -217,6 +246,36 @@ ul {
 }
 .btn:hover > svg path {
   stroke: #000000;
+}
+
+#pg-home .carousel-home {
+  position: relative;
+}
+#pg-home .carousel-home img {
+  width: 100%;
+}
+#pg-home .carousel-home .mbl {
+  display: none;
+}
+#pg-home .carousel-home .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#pg-home .carousel-home .slick-arrow.slick-prev {
+  left: 10%;
+}
+#pg-home .carousel-home .slick-arrow.slick-next {
+  right: 10%;
+}
+
+@media (max-width: 768px) {
+  #pg-home .carousel-home .mbl {
+    display: block;
+  }
+  #pg-home .carousel-home .dkp {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

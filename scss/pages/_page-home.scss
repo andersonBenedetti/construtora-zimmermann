@@ -1,0 +1,41 @@
+#pg-home {
+  .carousel-home {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .mbl {
+      display: none;
+    }
+
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &.slick-prev {
+        left: 10%;
+      }
+
+      &.slick-next {
+        right: 10%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #pg-home {
+    .carousel-home {
+      .mbl {
+        display: block;
+      }
+
+      .dkp {
+        display: none;
+      }
+    }
+  }
+}
