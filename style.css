@@ -235,6 +235,43 @@ ul {
   transition: opacity 0.3s ease, visibility 0s linear 0s;
 }
 
+#footer {
+  background-color: #272527;
+}
+#footer .top {
+  padding: 50px 0;
+}
+#footer .top .logo {
+  display: block;
+  max-width: 190px;
+  margin: 0 auto;
+}
+#footer .top .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  border-top: 2px solid #414042;
+  padding-top: 20px;
+}
+#footer .top .content .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#footer .top .content .menu a {
+  display: block;
+  font-weight: 400;
+  font-size: 0.875;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+#footer .top .content .menu a:hover {
+  color: #ffa1a4;
+}
+
 .btn {
   display: flex;
   justify-content: center;
@@ -245,7 +282,7 @@ ul {
   font-weight: 600;
   font-size: 1em;
   line-height: 16px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
   box-sizing: border-box;
@@ -334,7 +371,7 @@ ul {
   font-weight: 400;
   font-size: 1.75em;
   line-height: 45.8px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   transform: rotate(-90deg);
 }
@@ -347,7 +384,7 @@ ul {
   font-weight: 400;
   font-size: 1.375em;
   line-height: 40.2px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 #pg-home .infos .top .content .counter {
@@ -360,7 +397,7 @@ ul {
   font-weight: 400;
   font-size: 2.25em;
   line-height: 60px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.03em;
   color: #ffa1a4;
 }
 #pg-home .infos .top .content .counter p {
