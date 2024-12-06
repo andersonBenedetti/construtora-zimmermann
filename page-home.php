@@ -32,6 +32,43 @@
     <?php endif; ?>
   </section>
 
-</main>
+  <section class="infos container" id="infos">
+    <a href="#infos" class="link">desça</a>
+    <div class="top">
+      <div class="img">
+        <h2>construtora <br>zimmermann</h2>
+        <img src="<?php echo get_stylesheet_directory_uri() . "/img/itapema.webp"; ?>" alt="Foto Itapema">
+      </div>
+      <div class="content">
+        <p class="title">Para transformar a vida das pessoas, fuja do habitual e desperte novas sensações.
+        </p>
+        <div class="counter">
+          <div v-for="(item, index) in counters" :key="index">
+            <span>{{ item.sign }} {{ item.current }}</span>
+            <p>{{ item.text }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<?php get_footer(); ?>
+    <div class="bottom">
+      <div class="content">
+        <p>A construtora Zimmermann atua a mais de <strong>12 anos</strong> com três princípios fundamentais:
+          comprometimento,
+          qualidade e inovação.</p>
+        <p>Conceber e executar projetos fascinantes para quem vê e primorosos para quem vive, empreendimentos
+          contemporâneos repletos de elegância, ambientes incríveis e <strong>qualidade de entrega
+            superior</strong> com
+          acabamentos executados nos mínimos detalhes.</p>
+        <a href="#" class="btn">
+          conheça mais
+          <?php include get_stylesheet_directory() . '/img/icons/arrow-btn.svg'; ?>
+        </a>
+      </div>
+      <a href="#" class="video">
+        <img src="<?php echo get_stylesheet_directory_uri() . "/img/video-home.webp"; ?>" alt="Imagem do video home">
+      </a>
+    </div>
+  </section>
+
+</main><?php get_footer(); ?>

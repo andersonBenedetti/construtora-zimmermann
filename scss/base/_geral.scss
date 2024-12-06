@@ -19,6 +19,7 @@ html {
   color: $black;
   background-color: $gray;
   scroll-behavior: smooth;
+  color: $white;
 }
 
 main {
@@ -38,6 +39,23 @@ ul {
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.title {
+  position: relative;
+  padding-left: 85px;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 50px;
+    height: 1px;
+    background-color: $white;
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .slick-arrow {
