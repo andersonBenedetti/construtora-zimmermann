@@ -250,14 +250,16 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  gap: 20px;
+  gap: 100px;
   border-top: 2px solid #414042;
-  padding-top: 20px;
+  padding-top: 30px;
+  margin-top: 20px;
 }
 #footer .top .content .menu {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
+  flex: 1;
 }
 #footer .top .content .menu a {
   display: block;
@@ -269,6 +271,29 @@ ul {
   transition: color 0.3s ease;
 }
 #footer .top .content .menu a:hover {
+  color: #ffa1a4;
+}
+#footer .top .content .menu:nth-child(2) {
+  text-align: center;
+}
+#footer .top .content .menu:nth-child(3) {
+  text-align: end;
+  gap: 20px;
+}
+#footer .bottom {
+  text-align: center;
+  background-color: #1e1e1e;
+  padding: 10px 20px;
+  font-weight: 400;
+  font-size: 0.875;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+#footer .bottom a {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+#footer .bottom a:hover {
   color: #ffa1a4;
 }
 
@@ -305,6 +330,80 @@ ul {
 }
 .btn:hover svg path {
   fill: #ffa1a4;
+}
+
+.services {
+  background: linear-gradient(to bottom, transparent 50%, #1e1e1e 50%);
+}
+.services .title {
+  font-weight: 400;
+  font-size: 2.25em;
+  line-height: 60px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+.services .list-cards .slick-slide {
+  margin: 0 10px;
+}
+.services .list-cards .slick-list {
+  margin: 0 -10px;
+}
+.services .list-cards .slick-arrow {
+  top: -100px;
+}
+.services .list-cards .slick-arrow.slick-prev {
+  right: 60px;
+}
+.services .list-cards .slick-arrow.slick-next {
+  right: 0;
+}
+.services .list-cards a {
+  display: flex !important;
+  align-items: end;
+  height: 595px;
+  position: relative;
+  overflow: hidden;
+}
+.services .list-cards a .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+.services .list-cards a .content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  padding: 20px;
+}
+.services .list-cards a .content p {
+  font-weight: 300;
+  font-size: 0.875em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.services .list-cards a .content h3 {
+  font-weight: 300;
+  font-size: 1.125em;
+  line-height: 29.6px;
+  color: #ffffff;
+}
+.services .list-cards a:hover .img {
+  transform: scale(1.1);
+}
+.services .btn {
+  margin: 50px auto 0 auto;
 }
 
 #pg-home .carousel-home {

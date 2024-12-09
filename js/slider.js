@@ -1,25 +1,5 @@
 jQuery(document).ready(function () {
-  jQuery(".carousel-logos").slick({
-    autoplay: true,
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 1000,
-    autoplaySpeed: 2000,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
-  });
-
-  jQuery(".carousel-feedbacks").slick({
+  jQuery(".carousel-cards").slick({
     autoplay: true,
     dots: false,
     arrows: true,
