@@ -31,6 +31,8 @@
             </div>
         </div>
     </div>
+    <p class="bottom">CONSTRUTORA ZIMMERMANN. TODOS OS DIREITOS RESERVADOS | DESENVOLVIDO POR <a
+            href="https://blumewebstudio.com.br/" target="_blank">BLUME WEB STUDIO</a>.</p>
 </footer>
 
 <script>
