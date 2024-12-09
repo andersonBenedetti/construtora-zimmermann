@@ -71,4 +71,7 @@
     </div>
   </section>
 
+  <?php include(TEMPLATEPATH . '/inc/Services.php'); ?>
+
+
 </main><?php get_footer(); ?>
