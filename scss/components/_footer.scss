@@ -66,3 +66,26 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  #footer {
+    .top {
+      padding: 20px 0;
+
+      .content {
+        flex-wrap: wrap;
+        gap: 50px;
+        border-top: 2px solid $border;
+
+        .menu {
+          align-items: center;
+          gap: 20px;
+
+          a {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
