@@ -8,6 +8,8 @@
 
     .mbl {
       display: none;
+      height: 550px;
+      object-fit: cover;
     }
 
     .slick-arrow {
@@ -210,6 +212,7 @@
     .content {
       max-width: 480px;
       margin-top: -50px;
+      padding-right: 20px;
 
       .title {
         @include text-section-header;
@@ -289,6 +292,100 @@
 
       .dkp {
         display: none;
+      }
+    }
+
+    .infos {
+      padding: 50px 20px;
+
+      .link {
+        top: -55px;
+
+        &::after {
+          height: 50px;
+        }
+      }
+
+      .top {
+        flex-wrap: wrap;
+        gap: 50px;
+        margin-bottom: 20px;
+
+        .img {
+          h2 {
+            @include title-small;
+            text-transform: uppercase;
+            transform: rotate(-90deg);
+          }
+
+          img {
+            min-width: 110px;
+            padding-left: 80px;
+          }
+        }
+
+        .content {
+          .counter {
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            margin-top: 20px;
+          }
+        }
+      }
+
+      .bottom {
+        flex-wrap: wrap;
+        gap: 50px;
+
+        .content {
+          min-width: 110px;
+          text-align: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .services-home {
+      padding-top: 55px;
+      padding-bottom: 50px;
+      flex-wrap: wrap;
+      gap: 80px;
+
+      .carousel-services {
+        width: 100%;
+
+        .slick-arrow {
+          bottom: -60px;
+
+          &.slick-prev {
+            right: 80px;
+          }
+
+          &.slick-next {
+            right: 20px;
+          }
+        }
+
+        a {
+          height: 446px;
+        }
+      }
+
+      .content {
+        margin-top: 0;
+        padding: 20px;
+
+        p {
+          text-align: center;
+        }
+      }
+    }
+
+    .section-link {
+      a {
+        height: 430px;
       }
     }
   }
