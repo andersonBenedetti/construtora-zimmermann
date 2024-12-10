@@ -4,6 +4,13 @@
 
 <?php get_header(); ?>
 
+<?php
+$carouselServices = [
+  ['link' => '#', 'img' => 'itapema-home.webp', 'alt' => 'Foto de Itapema', 'title' => 'Itapema'],
+  ['link' => '#', 'img' => 'porto-belo-home.webp', 'alt' => 'Foto de Porto Belo', 'title' => 'Porto Belo'],
+];
+?>
+
 <main id="pg-home">
 
   <section class="carousel-home">
@@ -73,5 +80,29 @@
 
   <?php include(TEMPLATEPATH . '/inc/Services.php'); ?>
 
+  <section class="services-home">
+    <div class="carousel-services">
+      <?php
+      foreach ($carouselServices as $service): ?>
+        <a href="<?php echo esc_attr($service['link']); ?>">
+          <img class="img" src="<?php echo get_stylesheet_directory_uri() . "/img/{$service['img']}"; ?>"
+            alt="<?php echo esc_attr($service['alt']); ?>">
+          <div class="content">
+            <h3><?php echo esc_attr($service['title']); ?></h3>
+            <p>
+              ver empreendimentos
+              <?php include get_stylesheet_directory() . '/img/icons/arrow-btn.svg'; ?>
+            </p>
+          </div>
+        </a>
+      <?php endforeach; ?>
+    </div>
+    <div class="content">
+      <h2 class="title">Imóveis em Destinos Exclusivos</h2>
+      <p>Descubra empreendimentos que redefinem o conceito de <strong>viver bem</strong>. Selecione a localidade
+        desejada e explore imóveis que combinam design impecável, conforto absoluto e localização privilegiada
+      </p>
+    </div>
+  </section>
 
 </main><?php get_footer(); ?>
