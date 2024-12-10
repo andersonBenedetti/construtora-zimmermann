@@ -29,4 +29,15 @@ jQuery(document).ready(function () {
     slidesToShow: 1,
     slidesToScroll: 1,
   });
+
+  jQuery(".carousel-services").slick({
+    autoplay: true,
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 1000,
+    autoplaySpeed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  });
 });
