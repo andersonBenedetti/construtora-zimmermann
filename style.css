@@ -134,7 +134,8 @@ ul {
   border-radius: 80px;
   margin-top: -10px;
 }
-#header .header-static .content .menu-header .btn-menu span:before, #header .header-static .content .menu-header .btn-menu span:after {
+#header .header-static .content .menu-header .btn-menu span:before,
+#header .header-static .content .menu-header .btn-menu span:after {
   content: "";
   display: block;
   width: 30px;
