@@ -36,6 +36,24 @@
 </footer>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+        const searchButton = form.querySelector('.search-icon');
+
+        searchInput.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                form.submit();
+            }
+        });
+
+        searchButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            form.submit();
+        });
+    });
+
+
     const app = new Vue({
         el: '#app',
         data() {
@@ -43,10 +61,24 @@
                 activeMenu: false,
                 isScrolled: false,
                 isCounterAnimated: false,
-                counters: [
-                    { target: 10, current: 0, sign: '', text: 'Prêmios de Arquitetura e Design Inovador' },
-                    { target: 12, current: 0, sign: '+', text: 'de Excelência no Mercado Imobiliário' },
-                    { target: 60, current: 0, sign: '+', text: 'Empreendimentos de Alto Padrão Entregues' },
+                counters: [{
+                    target: 10,
+                    current: 0,
+                    sign: '',
+                    text: 'Prêmios de Arquitetura e Design Inovador'
+                },
+                {
+                    target: 12,
+                    current: 0,
+                    sign: '+',
+                    text: 'de Excelência no Mercado Imobiliário'
+                },
+                {
+                    target: 60,
+                    current: 0,
+                    sign: '+',
+                    text: 'Empreendimentos de Alto Padrão Entregues'
+                },
                 ],
             };
         },
