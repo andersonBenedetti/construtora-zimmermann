@@ -895,6 +895,152 @@ ul {
     height: 430px;
   }
 }
+#pg-contact .intro-top {
+  width: 100%;
+  height: 90px;
+  background-color: #1e1e1e;
+}
+#pg-contact .content h1 {
+  font-weight: 300;
+  font-size: 3.25em;
+  letter-spacing: 0.014em;
+  text-transform: uppercase;
+  margin-top: 100px;
+}
+@media (max-width: 768px) {
+  #pg-contact .content h1 {
+    font-size: 2em;
+  }
+}
+#pg-contact .content .infos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 100px 0;
+}
+#pg-contact .content .infos:last-child {
+  border-top: 2px solid #4f4e50;
+}
+#pg-contact .content .infos .img {
+  position: relative;
+}
+#pg-contact .content .infos .img h2 {
+  position: absolute;
+  bottom: 5px;
+  left: 40px;
+  font-weight: 400;
+  font-size: 1.75em;
+  line-height: 45.8px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  #pg-contact .content .infos .img h2 {
+    font-size: 1.375em;
+    line-height: 35px;
+  }
+}
+#pg-contact .content .infos .img img {
+  min-width: 653px;
+  max-width: 653px;
+  height: auto;
+  padding-left: 60px;
+}
+#pg-contact .content .infos .links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#pg-contact .content .infos .links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 300;
+  font-size: 1.125em;
+  line-height: 29.6px;
+  color: #e6e6e7;
+  transition: color 0.3s ease;
+}
+@media (max-width: 768px) {
+  #pg-contact .content .infos .links a {
+    font-size: 1em;
+    line-height: 24px;
+  }
+}
+#pg-contact .content .infos .links a svg {
+  transition: stroke 0.3s ease;
+}
+#pg-contact .content .infos .links a:hover {
+  color: #ffa1a4;
+}
+#pg-contact .content .infos .links a:hover svg {
+  stroke: #ffa1a4;
+}
+#pg-contact .content .infos .links a:nth-child(2) {
+  text-transform: uppercase;
+}
+#pg-contact .social {
+  margin-bottom: 100px;
+}
+#pg-contact .social h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.375em;
+  line-height: 40.2px;
+  letter-spacing: 0.03em;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  #pg-contact .social h2 {
+    font-size: 1.125em;
+    line-height: 32px;
+  }
+}
+#pg-contact .social > div {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+#pg-contact .social > div a {
+  display: block;
+}
+#pg-contact .social > div a svg {
+  transition: transform 0.3s ease;
+}
+#pg-contact .social > div a:hover svg {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  #pg-contact .content h1 {
+    margin-top: 50px;
+  }
+  #pg-contact .content .infos {
+    padding: 50px 0;
+  }
+  #pg-contact .content .infos .img h2 {
+    bottom: 5px;
+    left: 40px;
+  }
+  #pg-contact .content .infos .img img {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  #pg-contact .content .infos .links {
+    font-size: 0.875em;
+  }
+  #pg-contact .content .infos .links a svg {
+    width: 25px;
+    height: 25px;
+  }
+  #pg-contact .social {
+    margin-bottom: 50px;
+  }
+}
 #pg-projects .intro {
   background-image: url("./img/empreendimentos.webp");
   background-position: center;
