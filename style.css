@@ -1340,6 +1340,108 @@ ul {
     padding-bottom: 50px;
   }
 }
+#pg-location .intro p {
+  font-weight: 300;
+  font-size: 0.875em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  #pg-location .intro p {
+    font-size: 0.75em;
+  }
+}
+#pg-location .title {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2.25em;
+  line-height: 60px;
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  #pg-location .title {
+    font-size: 1.5em;
+    line-height: 45px;
+  }
+}
+#pg-location p {
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 30px;
+}
+@media (max-width: 768px) {
+  #pg-location p {
+    font-size: 0.875em;
+    line-height: 25px;
+  }
+}
+#pg-location .about {
+  padding: 100px 20px;
+}
+#pg-location .about .img {
+  width: 100%;
+  height: auto;
+}
+#pg-location .about .texts {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+#pg-location .about .texts > div {
+  width: 50%;
+}
+#pg-location .about .texts div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#pg-location .infos {
+  background: linear-gradient(to bottom, transparent 60%, #272527 40%);
+  padding-bottom: 100px;
+}
+#pg-location .infos > div {
+  display: flex;
+  gap: 30px;
+}
+#pg-location .infos > div > div {
+  width: 50%;
+}
+#pg-location .infos > div .img {
+  position: relative;
+  display: flex;
+  justify-content: end;
+}
+#pg-location .infos > div .img h2 {
+  position: absolute;
+  bottom: 5px;
+  left: 135px;
+  font-weight: 400;
+  font-size: 1.75em;
+  line-height: 45.8px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+  white-space: nowrap;
+}
+#pg-location .infos > div .img img {
+  max-width: 402px;
+  width: 100%;
+  height: auto;
+}
+#pg-location .infos > div .content > div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#pg-location .infos > div .content .img {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+}
+
 #pg-projects .intro {
   background-image: url("./img/empreendimentos.webp");
   background-position: center;
