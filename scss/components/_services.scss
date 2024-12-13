@@ -1,9 +1,5 @@
 .services {
-  background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    $background-footer 50%
-  );
+  background: linear-gradient(to bottom, transparent 50%, $gray-secondary 50%);
 
   .title {
     @include text-section-header;
