@@ -1441,7 +1441,55 @@ ul {
   height: auto;
   margin-top: 40px;
 }
+#pg-location .maps {
+  background-color: #272527;
+}
+#pg-location .maps a {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+}
+#pg-location .maps a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+#pg-location .maps a:hover img {
+  transform: scale(1.1);
+}
 
+@media (max-width: 768px) {
+  #pg-location .about {
+    padding: 50px 20px;
+  }
+  #pg-location .about .texts {
+    flex-wrap: wrap;
+  }
+  #pg-location .about .texts > div {
+    width: 100%;
+  }
+  #pg-location .about .texts div {
+    flex-wrap: wrap;
+  }
+  #pg-location .infos {
+    padding-bottom: 50px;
+  }
+  #pg-location .infos > div {
+    flex-wrap: wrap;
+  }
+  #pg-location .infos > div > div {
+    width: 100%;
+  }
+  #pg-location .infos > div .img img {
+    max-width: 200px;
+  }
+  #pg-location .maps a {
+    height: 260px;
+  }
+}
 #pg-projects .intro {
   background-image: url("./img/empreendimentos.webp");
   background-position: center;
