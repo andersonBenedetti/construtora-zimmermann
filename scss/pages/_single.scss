@@ -1,0 +1,247 @@
+#pg-single {
+  .title {
+    @include text-section-header;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+
+  .intro {
+    gap: 20px;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .caption {
+        @include caption;
+        text-transform: uppercase;
+      }
+
+      .text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include title-tertiary;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    padding: 100px 20px;
+
+    .gallery-content {
+      max-width: 600px;
+    }
+
+    .btns {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .infos {
+      .description {
+        @include title-main-secondary;
+        margin-bottom: 50px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: $gray-secondary;
+        padding: 30px;
+
+        .info {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          > div {
+            background-color: $border-contact;
+            width: 37px;
+            height: 37px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  .video {
+    background: linear-gradient(
+      to bottom,
+      transparent 60%,
+      $gray-secondary 40%
+    );
+
+    iframe {
+      width: 100%;
+      height: 450px;
+    }
+  }
+
+  .data {
+    background-color: $gray-secondary;
+    padding: 100px 0;
+
+    .container {
+      max-width: 900px;
+
+      .list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .icon {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-top: -3px;
+          }
+
+          .circle-progress {
+            width: 15px;
+            height: 15px;
+            transform: rotate(-90deg);
+          }
+
+          .circle-bg {
+            stroke-linecap: round;
+            stroke: $gray-secondary;
+            stroke-width: 1;
+            transform-origin: center;
+          }
+
+          .circle-fg {
+            stroke-linecap: round;
+            stroke: $circle;
+            stroke-width: 2;
+            transform-origin: center;
+            transition: stroke-dashoffset 0.5s ease;
+          }
+
+          .percentage {
+            @include caption;
+            color: $circle;
+            width: 35px;
+          }
+
+          .label {
+            @include label;
+            color: $text-circle;
+            text-transform: uppercase;
+            border-left: 1px solid $text-circle;
+            padding-left: 20px;
+            padding-top: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .follow {
+    background-color: $gray-secondary;
+    padding-bottom: 150px;
+
+    > div {
+      max-width: 900px;
+      display: flex;
+      justify-content: space-between;
+      gap: 100px;
+
+      > div {
+        width: 50%;
+
+        .title {
+          margin-bottom: 20px;
+        }
+
+        p {
+          @include title-tertiary;
+        }
+      }
+    }
+  }
+
+  .maps {
+    background-color: $gray-secondary;
+
+    .title {
+      margin-bottom: 10px;
+    }
+
+    .text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @include title-tertiary;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #pg-single {
+    .title {
+      margin-bottom: 20px;
+    }
+
+    .content {
+      flex-wrap: wrap;
+      gap: 50px;
+      padding: 50px 20px;
+
+      .btns {
+        flex-wrap: wrap;
+      }
+
+      .infos {
+        .card {
+          padding: 20px;
+        }
+      }
+    }
+
+    .video {
+      iframe {
+        height: 350px;
+      }
+    }
+
+    .data {
+      padding: 50px 0;
+
+      .container {
+        .list {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+        }
+      }
+    }
+
+    .follow {
+      padding-bottom: 70px;
+
+      > div {
+        flex-wrap: wrap;
+        gap: 50px;
+
+        > div {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
