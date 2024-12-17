@@ -77,6 +77,16 @@
         </div>
     </section>
 
+    <section class="maps">
+        <div class="container">
+            <h2 class="title">Onde fica</h2>
+        </div>
+        <a href="https://maps.app.goo.gl/KMfWwUd1ADgn3RKc8" target="_blank">
+            <img class="img" src="<?php echo get_stylesheet_directory_uri() . "/img/mapa-itapema.webp"; ?>"
+                alt="Mapa de Itapema">
+        </a>
+    </section>
+
 </main>
 
 <?php get_footer(); ?>

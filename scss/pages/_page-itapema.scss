@@ -99,4 +99,73 @@
       }
     }
   }
+
+  .maps {
+    background-color: $gray-secondary;
+
+    a {
+      display: block;
+      margin-top: 20px;
+      width: 100%;
+      height: 460px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #pg-location {
+    .about {
+      padding: 50px 20px;
+
+      .texts {
+        flex-wrap: wrap;
+
+        > div {
+          width: 100%;
+        }
+
+        div {
+          flex-wrap: wrap;
+        }
+      }
+    }
+
+    .infos {
+      padding-bottom: 50px;
+
+      > div {
+        flex-wrap: wrap;
+
+        > div {
+          width: 100%;
+        }
+
+        .img {
+          img {
+            max-width: 200px;
+          }
+        }
+      }
+    }
+
+    .maps {
+      a {
+        height: 260px;
+      }
+    }
+  }
 }
