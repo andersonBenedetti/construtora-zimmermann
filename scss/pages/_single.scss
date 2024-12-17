@@ -33,6 +33,10 @@
     gap: 100px;
     padding: 100px 20px;
 
+    .gallery-content {
+      max-width: 600px;
+    }
+
     .btns {
       display: flex;
       align-items: center;
@@ -143,6 +147,99 @@
             padding-left: 20px;
             padding-top: 2px;
           }
+        }
+      }
+    }
+  }
+
+  .follow {
+    background-color: $gray-secondary;
+    padding-bottom: 150px;
+
+    > div {
+      max-width: 900px;
+      display: flex;
+      justify-content: space-between;
+      gap: 100px;
+
+      > div {
+        width: 50%;
+
+        .title {
+          margin-bottom: 20px;
+        }
+
+        p {
+          @include title-tertiary;
+        }
+      }
+    }
+  }
+
+  .maps {
+    background-color: $gray-secondary;
+
+    .title {
+      margin-bottom: 10px;
+    }
+
+    .text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @include title-tertiary;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #pg-single {
+    .title {
+      margin-bottom: 20px;
+    }
+
+    .content {
+      flex-wrap: wrap;
+      gap: 50px;
+      padding: 50px 20px;
+
+      .btns {
+        flex-wrap: wrap;
+      }
+
+      .infos {
+        .card {
+          padding: 20px;
+        }
+      }
+    }
+
+    .video {
+      iframe {
+        height: 350px;
+      }
+    }
+
+    .data {
+      padding: 50px 0;
+
+      .container {
+        .list {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+        }
+      }
+    }
+
+    .follow {
+      padding-bottom: 70px;
+
+      > div {
+        flex-wrap: wrap;
+        gap: 50px;
+
+        > div {
+          width: 100%;
         }
       }
     }

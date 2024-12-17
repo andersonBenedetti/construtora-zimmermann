@@ -6,16 +6,16 @@
 
 <?php
 $items = [
-  ['title' => 'Projeto', 'percentage' => 'porcentagem_-_projeto'],
-  ['title' => 'Fundações e contenções', 'percentage' => 'porcentagem_-_fundacoes_e_contencoes'],
-  ['title' => 'Alvenarias', 'percentage' => 'porcentagem_-_alvenarias'],
-  ['title' => 'Instalações hidrossanitárias', 'percentage' => 'porcentagem_-_instalacoes_hidrossanitarias'],
-  ['title' => 'Revestimentos internos', 'percentage' => 'porcentagem_-_revestimentos_internos'],
-  ['title' => 'Preparo do terreno', 'percentage' => 'porcentagem_-_preparo_do_terreno'],
-  ['title' => 'Estrutura', 'percentage' => 'porcentagem_-_estrutura'],
-  ['title' => 'Instalações elétricas e de comunicação', 'percentage' => 'porcentagem_-_instalacoes_eletricas_e_de_comunicacao'],
-  ['title' => 'Instalações climáticas', 'percentage' => 'porcentagem_-_instalacoes_climaticas'],
-  ['title' => 'Contrapiso e piso', 'percentage' => 'porcentagem_-_contrapiso_e_piso'],
+    ['title' => 'Projeto', 'percentage' => 'porcentagem_-_projeto'],
+    ['title' => 'Fundações e contenções', 'percentage' => 'porcentagem_-_fundacoes_e_contencoes'],
+    ['title' => 'Alvenarias', 'percentage' => 'porcentagem_-_alvenarias'],
+    ['title' => 'Instalações hidrossanitárias', 'percentage' => 'porcentagem_-_instalacoes_hidrossanitarias'],
+    ['title' => 'Revestimentos internos', 'percentage' => 'porcentagem_-_revestimentos_internos'],
+    ['title' => 'Preparo do terreno', 'percentage' => 'porcentagem_-_preparo_do_terreno'],
+    ['title' => 'Estrutura', 'percentage' => 'porcentagem_-_estrutura'],
+    ['title' => 'Instalações elétricas e de comunicação', 'percentage' => 'porcentagem_-_instalacoes_eletricas_e_de_comunicacao'],
+    ['title' => 'Instalações climáticas', 'percentage' => 'porcentagem_-_instalacoes_climaticas'],
+    ['title' => 'Contrapiso e piso', 'percentage' => 'porcentagem_-_contrapiso_e_piso'],
 ];
 ?>
 
@@ -26,20 +26,20 @@ $items = [
         <div class="content container">
             <p class="caption">
                 <?php
-        $tags = get_the_tags();
+                $tags = get_the_tags();
 
-        if ($tags) {
-          $tag_names = array();
+                if ($tags) {
+                    $tag_names = array();
 
-          foreach ($tags as $tag) {
-            $tag_names[] = esc_html($tag->name);
-          }
+                    foreach ($tags as $tag) {
+                        $tag_names[] = esc_html($tag->name);
+                    }
 
-          echo implode(', ', $tag_names);
-        } else {
-          echo '';
-        }
-        ?>
+                    echo implode(', ', $tag_names);
+                } else {
+                    echo '';
+                }
+                ?>
             </p>
             <h1><?php the_title(); ?></h1>
             <p class="text">
@@ -56,7 +56,9 @@ $items = [
 
     <section class="content container">
         <div>
-            <?php // the_content(); ?>
+            <div class="gallery-content">
+                <?php the_content(); ?>
+            </div>
             <div class="btns">
                 <a class="btn secondary"
                     href="https://wa.me/?text=<?php echo urlencode('Olá, tenho interesse no ' . get_the_title()); ?>"
@@ -108,26 +110,48 @@ $items = [
             <h2 class="title">Estágio de construção</h2>
             <div class="list">
                 <?php foreach ($items as $item):
-          $percentage = get_field($item['percentage']);
-          $circle_offset = 28.27 - (28.27 * $percentage / 100);
-          ?>
-                <div class="item">
-                    <span class="icon">
-                        <svg class="circle-progress" width="15" height="15" viewBox="0 0 15 15"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <circle class="circle-bg" cx="7.5" cy="7.5" r="6.5" stroke="#272527" stroke-width="1"
-                                fill="none" />
-                            <circle class="circle-fg" cx="7.5" cy="7.5" r="6.5" stroke="#d9d9d9" stroke-width="1"
-                                fill="none" stroke-dasharray="40.84"
-                                stroke-dashoffset="<?php echo $circle_offset; ?>" />
-                        </svg>
-                    </span>
-                    <p class="percentage"><?php echo esc_html($percentage); ?>%</p>
-                    <p class="label"><?php echo esc_html($item['title']); ?></p>
-                </div>
+                    $percentage = get_field($item['percentage']);
+                    $circle_offset = 28.27 - (28.27 * $percentage / 100);
+                    ?>
+                    <div class="item">
+                        <span class="icon">
+                            <svg class="circle-progress" width="15" height="15" viewBox="0 0 15 15"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle class="circle-bg" cx="7.5" cy="7.5" r="6.5" stroke="#272527" stroke-width="1"
+                                    fill="none" />
+                                <circle class="circle-fg" cx="7.5" cy="7.5" r="6.5" stroke="#d9d9d9" stroke-width="1"
+                                    fill="none" stroke-dasharray="40.84"
+                                    stroke-dashoffset="<?php echo $circle_offset; ?>" />
+                            </svg>
+                        </span>
+                        <p class="percentage"><?php echo esc_html($percentage); ?>%</p>
+                        <p class="label"><?php echo esc_html($item['title']); ?></p>
+                    </div>
                 <?php endforeach; ?>
             </div>
         </div>
+    </section>
+
+    <section class="follow">
+        <div class="container">
+            <div>
+                <h2 class="title">Acompanhe o progresso</h2>
+                <p>Confira nos vídeos a seguir o andamento da obra e o cuidado com cada detalhe, evidenciando nosso
+                    compromisso com a qualidade em cada etapa do projeto.</p>
+            </div>
+            <div></div>
+        </div>
+    </section>
+
+    <section class="maps">
+        <div class="container">
+            <h2 class="title">Localização</h2>
+            <p class="text">
+                <?php include get_stylesheet_directory() . '/img/icons/local-single.svg'; ?>
+                <?php the_field('texto_-_endereco'); ?>
+            </p>
+        </div>
+        <?php the_field('map_project'); ?>
     </section>
 
 </main>
