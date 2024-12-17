@@ -37,6 +37,20 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        const items = document.querySelectorAll('.item');
+
+        items.forEach(function (item) {
+            const percentage = parseFloat(item.querySelector('p').textContent.replace('%', '').trim());
+            const circle = item.querySelector('.circle-fg');
+            const circumference = 2 * Math.PI * circle.r.baseVal.value;
+            const offset = circumference - (percentage / 100) * circumference;
+
+            circle.style.strokeDashoffset = offset;
+        });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
         const form = document.getElementById('search-form');
         const searchInput = document.getElementById('search-input');
         const searchButton = form.querySelector('.search-icon');

@@ -15,7 +15,7 @@
   > svg {
     width: 24px;
     height: 24px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border 0.3s ease;
 
     path {
       transition: fill 0.3s ease;
@@ -31,6 +31,18 @@
       path {
         fill: $red;
       }
+    }
+  }
+
+  &.secondary {
+    border: 1px solid $white;
+    padding: 10px 20px;
+    color: $white;
+    transition: border-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      border-color: $red;
+      color: $red;
     }
   }
 }
