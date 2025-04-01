@@ -64,3 +64,36 @@ function enqueue_slick_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_slick_scripts');
+
+// API Google Maps do ACF
+function my_acf_google_map_api($api)
+{
+	$api['key'] = 'AIzaSyB5p2aQx2VTFTZT0QtiSV4v_xp-OMEL5Uk';
+	return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+// Alterar nome 'Post'
+function alterar_nome_menu_posts()
+{
+	global $menu;
+	$menu[5][0] = 'Empreendimentos'; // 'Posts' para 'Empreendimentos'
+}
+add_action('admin_menu', 'alterar_nome_menu_posts');
+
+function enqueue_gallery_scripts()
+{
+	// FlexSlider CSS (usado pelo WooCommerce)
+	wp_enqueue_style('flexslider', 'https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css');
+
+	// FlexSlider JS
+	wp_enqueue_script('flexslider', 'https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js', array('jquery'), '2.7.2', true);
+
+	// Zoom (para efeito de hover igual ao WooCommerce)
+	wp_enqueue_script('zoom', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js', array('jquery'), '1.7.21', true);
+
+	// Lightbox (opcional, para popup)
+	wp_enqueue_script('lightbox', 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js', array('jquery'), '2.11.3', true);
+	wp_enqueue_style('lightbox', 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css');
+}
+add_action('wp_enqueue_scripts', 'enqueue_gallery_scripts');
