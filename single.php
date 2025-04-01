@@ -55,10 +55,27 @@ $items = [
     </section>
 
     <section class="content container">
-        <div>
-            <div class="gallery-content">
-                <?php the_content(); ?>
-            </div>
+        <div class="gallery-content">
+            <?php
+            $images = get_field('galeria_de_imagens');
+
+            if ($images):
+                echo '<div class="woocommerce-product-gallery-wrapper">';
+                echo '<div class="flexslider horizontal">';
+                echo '<ul class="slides">';
+                foreach ($images as $image):
+                    echo '<li data-thumb="' . esc_url($image['url']) . '">';
+                    echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" class="zoom" data-action="zoom" />';
+
+                    echo '</li>';
+                endforeach;
+                echo '</ul>';
+                echo '</div>';
+                echo '</div>';
+            else:
+                echo '<p>Nenhuma imagem encontrada na galeria.</p>';
+            endif;
+            ?>
             <div class="btns">
                 <a class="btn secondary"
                     href="https://wa.me/?text=<?php echo urlencode('Olá, tenho interesse no ' . get_the_title()); ?>"
@@ -72,9 +89,10 @@ $items = [
             </div>
         </div>
 
+
         <div class="infos">
             <div class="description">
-                <?php the_field('short_description'); ?>
+                <?php the_content(); ?>
             </div>
             <div class="card">
                 <div class="info">
@@ -139,7 +157,49 @@ $items = [
                 <p>Confira nos vídeos a seguir o andamento da obra e o cuidado com cada detalhe, evidenciando nosso
                     compromisso com a qualidade em cada etapa do projeto.</p>
             </div>
-            <div></div>
+            <div class="gallery-content">
+                <?php
+                $shorts = get_field('galeria_de_shorts');
+
+                if ($shorts && !empty($shorts['videos_shorts'])):
+                    echo '<div class="woocommerce-product-gallery-wrapper">';
+                    echo '<div class="flexslider vertical">';
+                    echo '<ul class="slides">';
+
+                    foreach ($shorts['videos_shorts'] as $short):
+                        $youtube_url = $short['url_do_youtube'];
+
+                        // Extrai o ID do vídeo (compatível com Shorts e URLs normais)
+                        $video_id = '';
+                        if (preg_match('/shorts\/([a-zA-Z0-9_-]+)|[?&]v=([a-zA-Z0-9_-]+)|youtu\.be\/([a-zA-Z0-9_-]+)|embed\/([a-zA-Z0-9_-]+)/', $youtube_url, $matches)) {
+                            $video_id = $matches[1] ?: ($matches[2] ?: ($matches[3] ?: $matches[4]));
+                        }
+
+                        if ($video_id):
+                            $thumbnail_url = "https://img.youtube.com/vi/{$video_id}/0.jpg";
+                            echo '<li data-thumb="' . esc_url($thumbnail_url) . '">';
+                            echo '<div class="short-container">';
+                            echo '<iframe 
+                            width="245" 
+                            height="465" 
+                            src="https://www.youtube.com/embed/' . esc_attr($video_id) . '" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>';
+                            echo '</div>';
+                            echo '</li>';
+                        endif;
+                    endforeach;
+
+                    echo '</ul>';
+                    echo '</div>';
+                    echo '</div>';
+                else:
+                    echo '<p>Nenhum vídeo encontrado na galeria.</p>';
+                endif;
+                ?>
+            </div>
         </div>
     </section>
 
@@ -148,10 +208,29 @@ $items = [
             <h2 class="title">Localização</h2>
             <p class="text">
                 <?php include get_stylesheet_directory() . '/img/icons/local-single.svg'; ?>
-                <?php the_field('texto_-_endereco'); ?>
+                <?php the_field('address'); ?>
             </p>
         </div>
-        <?php the_field('map_project'); ?>
+        <div class="map-container">
+            <?php
+            $map = get_field('map_project'); // Recupera os dados do campo Google Maps
+            if ($map) {
+                $lat = $map['lat']; // Latitude
+                $lng = $map['lng']; // Longitude
+                $zoom = $map['zoom']; // Nível de zoom
+            
+                // Exibe o mapa com o ponto de referência
+                echo '<iframe 
+						src="https://www.google.com/maps/embed/v1/view?key=AIzaSyB5p2aQx2VTFTZT0QtiSV4v_xp-OMEL5Uk&center=' . esc_attr($lat) . ',' . esc_attr($lng) . '&zoom=' . esc_attr($zoom) . '" 
+						width="100%" 
+						height="450" 
+						frameborder="0" 
+						style="border:0;" 
+						allowfullscreen="">
+					  </iframe>';
+            }
+            ?>
+        </div>
     </section>
 
 </main>
