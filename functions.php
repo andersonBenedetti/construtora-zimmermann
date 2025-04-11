@@ -68,7 +68,7 @@ add_action('wp_enqueue_scripts', 'enqueue_slick_scripts');
 // API Google Maps do ACF
 function my_acf_google_map_api($api)
 {
-	$api['key'] = 'AIzaSyB5p2aQx2VTFTZT0QtiSV4v_xp-OMEL5Uk';
+	$api['key'] = '*******';
 	return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
