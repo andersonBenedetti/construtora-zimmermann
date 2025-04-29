@@ -236,11 +236,6 @@
 
   .follow {
     background-color: $gray-secondary;
-    padding-bottom: 150px;
-
-    @media (max-width: 1024px) {
-      padding-bottom: 50px;
-    }
 
     > div {
       max-width: 900px;
@@ -355,7 +350,12 @@
   }
 
   .maps {
+    padding-top: 150px;
     background-color: $gray-secondary;
+
+    @media (max-width: 1024px) {
+      padding-top: 50px;
+    }
 
     .title {
       margin-bottom: 10px;
