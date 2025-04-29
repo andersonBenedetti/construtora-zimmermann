@@ -1872,12 +1872,6 @@ ul {
 }
 #pg-single .follow {
   background-color: #272527;
-  padding-bottom: 150px;
-}
-@media (max-width: 1024px) {
-  #pg-single .follow {
-    padding-bottom: 50px;
-  }
 }
 #pg-single .follow > div {
   max-width: 900px;
@@ -1983,7 +1977,13 @@ ul {
   }
 }
 #pg-single .maps {
+  padding-top: 150px;
   background-color: #272527;
+}
+@media (max-width: 1024px) {
+  #pg-single .maps {
+    padding-top: 50px;
+  }
 }
 #pg-single .maps .title {
   margin-bottom: 10px;

@@ -61,7 +61,7 @@ $items = [
 
             if ($images):
                 echo '<div class="woocommerce-product-gallery-wrapper">';
-                echo '<div class="flexslider horizontal">';
+                echo '<div class="flexslider">';
                 echo '<ul class="slides">';
                 foreach ($images as $image):
                     echo '<li data-thumb="' . esc_url($image['url']) . '">';
@@ -123,63 +123,79 @@ $items = [
         </div>
     </section>
 
-    <section class="data">
-        <div class="container">
-            <h2 class="title">Estágio de construção</h2>
-            <div class="list">
-                <?php foreach ($items as $item):
-                    $percentage = get_field($item['percentage']);
-                    $circle_offset = 28.27 - (28.27 * $percentage / 100);
-                    ?>
-                    <div class="item">
-                        <span class="icon">
-                            <svg class="circle-progress" width="15" height="15" viewBox="0 0 15 15"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <circle class="circle-bg" cx="7.5" cy="7.5" r="6.5" stroke="#272527" stroke-width="1"
-                                    fill="none" />
-                                <circle class="circle-fg" cx="7.5" cy="7.5" r="6.5" stroke="#d9d9d9" stroke-width="1"
-                                    fill="none" stroke-dasharray="40.84"
-                                    stroke-dashoffset="<?php echo $circle_offset; ?>" />
-                            </svg>
-                        </span>
-                        <p class="percentage"><?php echo esc_html($percentage); ?>%</p>
-                        <p class="label"><?php echo esc_html($item['title']); ?></p>
-                    </div>
-                <?php endforeach; ?>
+    <?php
+    $tags = get_the_tags();
+    $tem_em_obras = false;
+
+    if ($tags) {
+        foreach ($tags as $tag) {
+            if ($tag->slug === 'em-obras') {
+                $tem_em_obras = true;
+                break;
+            }
+        }
+    }
+    ?>
+
+    <?php if ($tem_em_obras): ?>
+
+        <section class="data">
+            <div class="container">
+                <h2 class="title">Estágio de construção</h2>
+                <div class="list">
+                    <?php foreach ($items as $item):
+                        $percentage = get_field($item['percentage']);
+                        $circle_offset = 28.27 - (28.27 * $percentage / 100);
+                        ?>
+                        <div class="item">
+                            <span class="icon">
+                                <svg class="circle-progress" width="15" height="15" viewBox="0 0 15 15"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="circle-bg" cx="7.5" cy="7.5" r="6.5" stroke="#272527" stroke-width="1"
+                                        fill="none" />
+                                    <circle class="circle-fg" cx="7.5" cy="7.5" r="6.5" stroke="#d9d9d9" stroke-width="1"
+                                        fill="none" stroke-dasharray="40.84"
+                                        stroke-dashoffset="<?php echo $circle_offset; ?>" />
+                                </svg>
+                            </span>
+                            <p class="percentage"><?php echo esc_html($percentage); ?>%</p>
+                            <p class="label"><?php echo esc_html($item['title']); ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="follow">
-        <div class="container">
-            <div>
-                <h2 class="title">Acompanhe o progresso</h2>
-                <p>Confira nos vídeos a seguir o andamento da obra e o cuidado com cada detalhe, evidenciando nosso
-                    compromisso com a qualidade em cada etapa do projeto.</p>
-            </div>
-            <div class="gallery-content">
-                <?php
-                $shorts = get_field('galeria_de_shorts');
+        <section class="follow">
+            <div class="container">
+                <div>
+                    <h2 class="title">Acompanhe o progresso</h2>
+                    <p>Confira nos vídeos a seguir o andamento da obra e o cuidado com cada detalhe, evidenciando nosso
+                        compromisso com a qualidade em cada etapa do projeto.</p>
+                </div>
+                <div class="gallery-content">
+                    <?php
+                    $shorts = get_field('galeria_de_shorts');
 
-                if ($shorts && !empty($shorts['videos_shorts'])):
-                    echo '<div class="woocommerce-product-gallery-wrapper">';
-                    echo '<div class="flexslider vertical">';
-                    echo '<ul class="slides">';
+                    if ($shorts && !empty($shorts['videos_shorts'])):
+                        echo '<div class="woocommerce-product-gallery-wrapper">';
+                        echo '<div class="flexslider vertical-carousel">';
+                        echo '<ul class="slides">';
 
-                    foreach ($shorts['videos_shorts'] as $short):
-                        $youtube_url = $short['url_do_youtube'];
+                        foreach ($shorts['videos_shorts'] as $short):
+                            $youtube_url = $short['url_do_youtube'];
 
-                        // Extrai o ID do vídeo (compatível com Shorts e URLs normais)
-                        $video_id = '';
-                        if (preg_match('/shorts\/([a-zA-Z0-9_-]+)|[?&]v=([a-zA-Z0-9_-]+)|youtu\.be\/([a-zA-Z0-9_-]+)|embed\/([a-zA-Z0-9_-]+)/', $youtube_url, $matches)) {
-                            $video_id = $matches[1] ?: ($matches[2] ?: ($matches[3] ?: $matches[4]));
-                        }
+                            // Extrai o ID do vídeo (compatível com Shorts e URLs normais)
+                            $video_id = '';
+                            if (preg_match('/shorts\/([a-zA-Z0-9_-]+)|[?&]v=([a-zA-Z0-9_-]+)|youtu\.be\/([a-zA-Z0-9_-]+)|embed\/([a-zA-Z0-9_-]+)/', $youtube_url, $matches)) {
+                                $video_id = $matches[1] ?: ($matches[2] ?: ($matches[3] ?: $matches[4]));
+                            }
 
-                        if ($video_id):
-                            $thumbnail_url = "https://img.youtube.com/vi/{$video_id}/0.jpg";
-                            echo '<li data-thumb="' . esc_url($thumbnail_url) . '">';
-                            echo '<div class="short-container">';
-                            echo '<iframe 
+                            if ($video_id):
+                                $thumbnail_url = "https://img.youtube.com/vi/{$video_id}/0.jpg";
+                                echo '<li data-thumb="' . esc_url($thumbnail_url) . '">';
+                                echo '<div class="short-container">';
+                                echo '<iframe 
                             width="245" 
                             height="465" 
                             src="https://www.youtube.com/embed/' . esc_attr($video_id) . '" 
@@ -187,21 +203,23 @@ $items = [
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>';
-                            echo '</div>';
-                            echo '</li>';
-                        endif;
-                    endforeach;
+                                echo '</div>';
+                                echo '</li>';
+                            endif;
+                        endforeach;
 
-                    echo '</ul>';
-                    echo '</div>';
-                    echo '</div>';
-                else:
-                    echo '<p>Nenhum vídeo encontrado na galeria.</p>';
-                endif;
-                ?>
+                        echo '</ul>';
+                        echo '</div>';
+                        echo '</div>';
+                    else:
+                        echo '<p>Nenhum vídeo encontrado na galeria.</p>';
+                    endif;
+                    ?>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    <?php endif; ?>
 
     <section class="maps">
         <div class="container">
