@@ -8,6 +8,10 @@
   .intro {
     gap: 20px;
 
+    .img {
+      filter: brightness(50%);
+    }
+
     .content {
       display: flex;
       flex-direction: column;
