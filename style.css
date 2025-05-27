@@ -493,6 +493,7 @@ ul {
   overflow: hidden;
 }
 .services .list-cards a .img {
+  filter: brightness(50%);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1645,6 +1646,9 @@ ul {
 }
 #pg-single .intro {
   gap: 20px;
+}
+#pg-single .intro .img {
+  filter: brightness(50%);
 }
 #pg-single .intro .content {
   display: flex;
